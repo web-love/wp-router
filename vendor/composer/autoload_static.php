@@ -4,22 +4,34 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit230f9f59e8692246e2187fceb101b500
+class ComposerStaticInit6e6e286ed061d48e57a45bde5ce525fa
 {
-    public static $prefixesPsr0 = array (
+    public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'Weblove\\WPRouter' => 
-            array (
-                0 => __DIR__ . '/../..' . '/src',
-            ),
+            'Weblove\\WPRouter\\' => 17,
         ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Weblove\\WPRouter\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
+    public static $classMap = array (
+        'Weblove\\WPRouter\\Router' => __DIR__ . '/../..' . '/src/Router/Router.php',
+        'Weblove\\WPRouter\\RouterInterface' => __DIR__ . '/../..' . '/src/Router/RouterInterface.php',
+        'Weblove\\WPRouter\\RouterMethods' => __DIR__ . '/../..' . '/src/Router/RouterMethods.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInit230f9f59e8692246e2187fceb101b500::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6e6e286ed061d48e57a45bde5ce525fa::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6e6e286ed061d48e57a45bde5ce525fa::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6e6e286ed061d48e57a45bde5ce525fa::$classMap;
 
         }, null, ClassLoader::class);
     }

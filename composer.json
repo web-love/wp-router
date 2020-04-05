@@ -17,8 +17,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Weblove\\WPRouter": "src/"
-        }
+        "psr-4": {
+			"Weblove\\WPRouter\\": "src/"
+		}
     }
   }
