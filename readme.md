@@ -1,13 +1,11 @@
-# Wordpress router for REST API
-WP router is an [expressJs](https://expressjs.com/fr/) inspired router for Wordpress REST api. We always found Wordpress REST logic to be cumbersome, boilerplate-y and difficult to extend, leading to very large callback functions and spagetthi code. With this plugin you can easily write reusable middlewares for your projects or your plugins. You can also bypass Wordpress permission callbacks and easily make your own Authorization middlewares.
+# Wordpress Router class for REST API
+Easily write reusable route middlewares for your Wordpress projects and plugins. WPRouter is inspired from the excellent [expressJs](https://expressjs.com/fr/) javascript framework. Working with Wordpress REST API will now bring you joy - instead of pain.
 
-* You can extend or "hook" existing Wordpress REST endpoints
-* Works great with virtually all other WP REST plugins 
-* Works great with cache plugins for fast API's.
-* If you are not a Wordpress or PHP guru, you can use this to get superpowers.
-* You don't need to understand route regexes, you can use simple param notation for your routes `example/:example_id/ressource`
-* Promotes code re-use and fast development time.
-* Without dependencies and only 300 loc, make Wordpress fast again.
+* Hook on already existing Wordpress REST endpoints.
+* Creating your own endpoints is a breeze.
+* Works with custom post types.
+* Simplifies the Wordpress route regex notation for simpler `/ressource/:ressource_slug` urls.
+* No dependencies, only =/- 300locs and simply extends/abstract Wordpress core. 
 
 ### Basic example
 ```php
@@ -29,14 +27,10 @@ $router->hook('GET', '/wp/v2/posts/:id',
 
 /**
  * Or even better, create your own endpoints !
- * like the previous example, you can chain custom
- * middlewares that have access to the the $request 
- * and $response object, 
  */
 $router->get("/foo/:id", 
   function ($request, $response) 
-  {
-    echo $request->get_url_params(); // echoes array [0 => "id"] 
+  { 
     $response["woo"] = "foo";
     return $response;
   }, 
@@ -49,10 +43,10 @@ $router->get("/foo/:id",
 );
 ```
 
-The `$request` function param implements Wordpress [WP_REST_Request](https://developer.wordpress.org/reference/classes/wp_rest_request/) class. So any methods you are used inside a REST callback are available there. The `$response` param is an empty array, use it to pass anything to the next middleware down the chain. 
+The `$request` function param implements Wordpress [WP_REST_Request](https://developer.wordpress.org/reference/classes/wp_rest_request/) class. The `$response` param is an empty variable that can be used to pass data to the next middleware down the chain, or to send back data on your endpoint.
 
 ### Creating a middleware
-Creating a middleware is very easy, simply create an anonymous function that takes $request and $response as parameters. A middleware should **always** return a `array $response` or an instanceof `WP_REST_Request`:
+Creating a middleware is easy, simply create an anonymous function that takes `$request` and `$response` as parameters. A middleware should **always** return a `array $response` or an instanceof `WP_REST_Request`:
 
 ```php
 $myCustomMiddleware = function ($req, $res) {
@@ -78,7 +72,7 @@ $myCustomAuthMiddleware = function ($req, $res) {
 ```
 
 ### Hook on an existing wordpress REST endpoint
-You can also easily modify the response body of an existing wordpress endpoint with the `public hook()` method. Simply put, middlewares added to the `hook` handler will have a pre-filled `$response` parameter with what Wordpress would normally return to the client. You can easily modify the return response this way. You can also hook onto custom post types and any plugin responses that uses Wordpress REST hooks.
+You can also easily modify the response body of an existing wordpress endpoint with the `public hook()` method. Simply put, middlewares added to the `hook` handler will have a pre-filled `$response` parameter with the array that Wordpress would normally return to the client. You can easily modify the return response this way. 
 
 note: *You do not need to put /wp-json in your endpoint address.*
 
