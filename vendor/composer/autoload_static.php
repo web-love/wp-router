@@ -9,7 +9,7 @@ class ComposerStaticInit230f9f59e8692246e2187fceb101b500
     public static $prefixesPsr0 = array (
         'W' => 
         array (
-            'Weblove' => 
+            'Weblove\\WPRouter' => 
             array (
                 0 => __DIR__ . '/../..' . '/src',
             ),
