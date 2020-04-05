@@ -6,7 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Weblove\\WPRouter\\Router' => $baseDir . '/src/Router/Router.php',
-    'Weblove\\WPRouter\\RouterInterface' => $baseDir . '/src/Router/RouterInterface.php',
-    'Weblove\\WPRouter\\RouterMethods' => $baseDir . '/src/Router/RouterMethods.php',
 );
