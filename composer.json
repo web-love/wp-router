@@ -5,7 +5,6 @@
     "keywords": ["Wordpress", "router", "middleware", "easy", "express", "expressjs", "weblove"],
     "homepage": "https://weblove.ca",
     "license": "MIT",
-    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.0"
     },
