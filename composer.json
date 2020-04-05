@@ -1,7 +1,7 @@
 {
     "name": "weblove/wp-router",
     "type": "library",
-    "description": "An ExpressJs inspired router for wordpress",
+    "description": "An ExpressJs inspired router for Wordpress",
     "keywords": ["Wordpress", "router", "middleware", "easy", "express", "expressjs", "weblove"],
     "homepage": "https://weblove.ca",
     "license": "MIT",
