@@ -7,13 +7,23 @@ Easily write reusable route middlewares for your Wordpress projects and plugins.
 * Simplifies the Wordpress route regex notation for simpler `/ressource/:ressource_slug` urls.
 * No dependencies, only =/- 300locs and simply extends/abstract Wordpress core. 
 
+**See on:**
+* [Packagist](https://packagist.org/packages/weblove/wp-router)
+* [Github](https://github.com/sudomaxime/wp-router)
+
+### Installation
+The best way to install this library is with composer:
+```bash
+composer require weblove/wp-router
+```
+
 ### Basic example
 ```php
 /**
  * Initialize your custom router, default route is
  * on /wp-json/api
  */
-$router = new WPRouter\Router;
+$router = new Weblove\WPRouter\Router;
 
 /**
  * Hook an already existing wordpress REST endpoint
@@ -87,8 +97,8 @@ $router->hook('GET', '/wp/v2/posts/:id',
 By default your routes get added under the `/wp-json/api` directory. You can change the default behavior by providing a router parameter to the `Router` class:
 
 ```php
-$router = new WPRouter\Router; // defaults to /wp-json/api
-$router = new WPRouter\Router("custom"); // now set to /wp-json/custom
+$router = new Weblove\WPRouter\Router; // defaults to /wp-json/api
+$router = new Weblove\WPRouter\Router("custom"); // now set to /wp-json/custom
 ```
 
 ### Public methods
