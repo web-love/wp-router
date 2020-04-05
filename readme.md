@@ -14,7 +14,7 @@ Easily write reusable route middlewares for your Wordpress projects and plugins.
 ### Installation
 The best way to install this library is with composer:
 ```bash
-composer require weblove/wp-router
+$ composer require weblove/wp-router
 ```
 
 ### Basic example
