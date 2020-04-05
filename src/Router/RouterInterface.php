@@ -1,6 +1,6 @@
 <?php
 
-namespace WPRouter;
+namespace Weblove\WPRouter;
 
 interface RouterInterface {
   public const custom_API_endpoint = "bolt/v1";

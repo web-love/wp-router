@@ -1,6 +1,6 @@
 <?php
 
-namespace WPRouter;
+namespace Weblove\WPRouter;
 
 /**
  * This class virtualises the Wordpress 
