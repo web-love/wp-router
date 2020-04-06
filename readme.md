@@ -1,7 +1,7 @@
 ![Wordpress router logo](https://i.ibb.co/nsRzTxx/wp-router-3.png)
 
 # Wordpress REST API router library 
-Easily write reusable route middlewares for your Wordpress projects and plugins. WPRouter is inspired from the excellent [expressJs](https://expressjs.com/fr/) javascript framework. Working with Wordpress REST API will now bring you joy - instead of pain.
+Easily write modern and reusable route middlewares for your Wordpress projects and plugins. WPRouter is inspired from the excellent [expressJs](https://expressjs.com/fr/) javascript framework. Working with Wordpress REST API will now bring you joy - instead of pain.
 
 * Hook on already existing Wordpress REST endpoints.
 * Creating your own endpoints is a breeze.
