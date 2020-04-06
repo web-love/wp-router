@@ -164,7 +164,7 @@ trait RouterMethods
         $response = $callback;
         // If $response returns Wordpress response, we break the iterator 
         // and shortcircuit the return. 
-        if (get_class($response) == 'WP_REST_Response') {
+        if (is_a($response, 'WP_REST_Response')) {
           break;
         }
       }
@@ -217,6 +217,8 @@ trait RouterMethods
       $parsed_route .= '/';
       if (strpos($directory, ':') !== false) {
         $param_slug = str_replace(":", '', $directory);
+        // TODO: Check if \d+ only works with ids check if the type must be 
+        // maybe \s+ for slugs or expressions.
         $parsed_route .= "(?P<{$param_slug}>\d+)";
       } else {
         $parsed_route .= $directory;
