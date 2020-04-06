@@ -3,7 +3,7 @@
 namespace Weblove\WPRouter;
 
 interface RouterInterface {
-  public const custom_API_endpoint = "bolt/v1";
+  public const custom_API_endpoint = "api/v1";
   public function hook (string $method, string $endpoint, callable ...$middlewares): void;
   public function get (string $endpoint, callable ...$middlewares): void;
   public function post (string $endpoint, callable ...$middlewares): void;
