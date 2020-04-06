@@ -16,6 +16,10 @@ Easily write modern and reusable route middlewares for your Wordpress projects a
 ## Getting started
 You need to have [Composer](https://getcomposer.org/) installed on your machine, [follow this link](https://getcomposer.org/doc/00-intro.md) for instructions on how to install Composer.
 
+## Prerequisites
+* You need to have PHP >= 5.5.0
+* Wordpress >= 4.7.1
+
 ### Installing
 The best way to install this library is with composer:
 ```bash
@@ -89,12 +93,14 @@ $myCustomAuthMiddleware = function ($req, $res) {
 ### Hook on an existing wordpress REST endpoint
 You can also easily modify the response body of an existing wordpress endpoint with the `public hook()` method. Simply put, middlewares added to the `hook` handler will have a pre-filled `$response` parameter with the array that Wordpress would normally return to the client. You can easily modify the return response this way. 
 
+A hook request **MUST** end with a [WP_REST_Request](https://developer.wordpress.org/reference/classes/wp_rest_request/) class, it is possible to pass custom $request objects from middleware to middleware, however in order to make other plugins and other wordpress REST hooks work, you must respect this pattern. 
+
 note: *You do not need to put /wp-json in your endpoint address.*
 
 ```php
 $router->hook('GET', '/wp/v2/posts/:id', 
   $authMiddleware,
-  $responseMiddleware
+  $responseMiddleware // this function ends by returning an instance of WP_REST_Response
 );
 ```
 
@@ -114,6 +120,9 @@ $router = new Weblove\WPRouter\Router("custom"); // now set to /wp-json/custom
 * `patch(string $endpoint, middleware ...$middleware)`
 * `hook(string $method_verb, string $endpoint, middleware ...$middleware)`  - Use an already existing Wordpress endpoint.
 * **In development** `use(string $endpoint, middleware ...$middleware)` - Use middlewares on all verbs of that endpoint.
+
+### Troubleshooting and frequent errors
+* My endpoint is returning an error `Uncaught Error: Call to a member function get_matched_route()` - This means you have a hook that doesn't return an instance of WP_REST_Response after all the middlewares have been executed. See this guide section on how to properly hook on existing wordpress endpoints.
 
 ## Authors
 * Maxime Nadeau - *initial work* - [Weblove](http://weblove.ca)
