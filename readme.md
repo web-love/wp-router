@@ -1,5 +1,7 @@
-# Wordpress Router class for REST API
-Easily write reusable route middlewares for your Wordpress projects and plugins. WPRouter is inspired from the excellent [expressJs](https://expressjs.com/fr/) javascript framework. Working with Wordpress REST API will now bring you joy - instead of pain.
+![Wordpress router logo](https://i.ibb.co/nsRzTxx/wp-router-3.png)
+
+# Wordpress REST API router library 
+Easily write modern and reusable route middlewares for your Wordpress projects and plugins. WPRouter is inspired from the excellent [expressJs](https://expressjs.com/fr/) javascript framework. Working with Wordpress REST API will now bring you joy - instead of pain.
 
 * Hook on already existing Wordpress REST endpoints.
 * Creating your own endpoints is a breeze.
@@ -113,8 +115,8 @@ $router = new Weblove\WPRouter\Router("custom"); // now set to /wp-json/custom
 * `hook(string $method_verb, string $endpoint, middleware ...$middleware)`  - Use an already existing Wordpress endpoint.
 * **In development** `use(string $endpoint, middleware ...$middleware)` - Use middlewares on all verbs of that endpoint.
 
-### Authors
+## Authors
 * Maxime Nadeau - *initial work* - [Weblove](http://weblove.ca)
 
-### License
+## License
 This project is licensed under the MIT License - see the license.md file for details.
