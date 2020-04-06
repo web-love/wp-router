@@ -1,6 +1,11 @@
 ![Wordpress router logo](https://i.ibb.co/nsRzTxx/wp-router-3.png)
 
 # Wordpress REST API router library 
+![MIT license](https://img.shields.io/packagist/l/weblove/wp-router)
+![size](https://img.shields.io/github/languages/code-size/sudomaxime/wp-router)
+![version](https://img.shields.io/github/v/release/sudomaxime/wp-router)
+![open issues](https://img.shields.io/github/issues/sudomaxime/wp-router)
+
 Easily write modern and reusable route middlewares for your Wordpress projects and plugins. WPRouter is inspired from the excellent [expressJs](https://expressjs.com/fr/) javascript framework. Working with Wordpress REST API will now bring you joy - instead of pain.
 
 * Hook on already existing Wordpress REST endpoints.
