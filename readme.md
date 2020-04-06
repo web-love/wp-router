@@ -11,7 +11,10 @@ Easily write reusable route middlewares for your Wordpress projects and plugins.
 * [Packagist](https://packagist.org/packages/weblove/wp-router)
 * [Github](https://github.com/sudomaxime/wp-router)
 
-### Installation
+## Getting started
+You need to have [Composer](https://getcomposer.org/) installed on your machine, [follow this link](https://getcomposer.org/doc/00-intro.md) for instructions on how to install Composer.
+
+### Installing
 The best way to install this library is with composer:
 ```bash
 $ composer require weblove/wp-router
@@ -109,3 +112,9 @@ $router = new Weblove\WPRouter\Router("custom"); // now set to /wp-json/custom
 * `patch(string $endpoint, middleware ...$middleware)`
 * `hook(string $method_verb, string $endpoint, middleware ...$middleware)`  - Use an already existing Wordpress endpoint.
 * **In development** `use(string $endpoint, middleware ...$middleware)` - Use middlewares on all verbs of that endpoint.
+
+### Authors
+* Maxime Nadeau - *initial work* - [Weblove](http://weblove.ca)
+
+### License
+This project is licensed under the MIT License - see the license.md file for details.
