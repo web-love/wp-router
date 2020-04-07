@@ -12,7 +12,7 @@ Easily write modern and reusable route middlewares for your Wordpress projects a
 * Creating your own endpoints is a breeze.
 * Works with custom post types.
 * Simplifies the Wordpress route regex notation for simpler `/ressource/:ressource_slug` urls.
-* No dependencies, only =/- 300locs and simply extends/abstract Wordpress core. 
+* No dependencies, less than 400locs that simply abstract Wordpress core. 
 
 **See on:**
 * [Packagist](https://packagist.org/packages/weblove/wp-router)
@@ -21,7 +21,7 @@ Easily write modern and reusable route middlewares for your Wordpress projects a
 ## Getting started
 You need to have [Composer](https://getcomposer.org/) installed on your machine, [follow this link](https://getcomposer.org/doc/00-intro.md) for instructions on how to install Composer.
 
-## Prerequisites
+### Prerequisites
 * You need to have PHP >= 5.5.0
 * Wordpress >= 4.7.1
 
