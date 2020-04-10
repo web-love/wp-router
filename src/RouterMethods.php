@@ -56,6 +56,7 @@ trait RouterMethods
     $mw_method = $request->get_method();
     $mw_route = $request->get_route();
     $mw_params = $request->get_url_params();
+    $param_matches = array();
 
     preg_match_all('/:[a-z|A-Z]+/', $endpoint, $matches, PREG_UNMATCHED_AS_NULL);
 
