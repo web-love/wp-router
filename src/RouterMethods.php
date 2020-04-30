@@ -60,8 +60,10 @@ trait RouterMethods
 
     preg_match_all('/:[a-z|A-Z]+/', $endpoint, $matches, PREG_UNMATCHED_AS_NULL);
 
-    foreach ($matches[0] as $match) {
-      $param_matches[] = str_replace(":", "", $match);
+    if(is_array($matches) && count($matches) > 0) {
+      foreach ($matches[0] as $match) {
+        $param_matches[] = str_replace(":", "", $match);
+      }
     }
 
     // If http verbs doesn't match
