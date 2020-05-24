@@ -22,7 +22,7 @@ Easily write modern and reusable route middlewares for your Wordpress projects a
 You need to have [Composer](https://getcomposer.org/) installed on your machine, [follow this link](https://getcomposer.org/doc/00-intro.md) for instructions on how to install Composer.
 
 ### Prerequisites
-* You need to have PHP >= 5.5.0
+* You need to have PHP >= 7.0
 * Wordpress >= 4.7.1
 
 ### Installing
